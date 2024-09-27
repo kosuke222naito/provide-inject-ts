@@ -8,10 +8,10 @@ interface Props {
 }
 
 const { id } = defineProps<Props>();
-const memberList = inject("memberList") as Map<number, Member>;
+const members = inject("members") as Map<number, Member>;
 
 const member = computed((): Member => {
-  return memberList.get(id) as Member;
+  return members.get(id) as Member;
 });
 
 const noteDisplay = computed((): string => {

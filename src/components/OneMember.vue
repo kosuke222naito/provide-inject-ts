@@ -11,7 +11,7 @@ const { id } = defineProps<Props>();
 const members = inject(membersKey)!;
 
 const member = computed((): Member => {
-  return members.get(id) as Member;
+  return members.value.get(id)!;
 });
 
 const noteDisplay = computed((): string => {

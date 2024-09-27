@@ -6,7 +6,7 @@ import { membersKey } from "@/injectionKeys";
 const members = inject(membersKey)!;
 
 const totalPoints = computed((): number => {
-  return Array.from(members.values()).reduce((sum, member) => sum + member.points, 0);
+  return Array.from(members.value.values()).reduce((sum, member) => sum + member.points, 0);
 });
 </script>
 

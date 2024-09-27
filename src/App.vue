@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, provide } from "vue";
+import { ref, provide } from "vue";
 import BaseSection from "./components/BaseSection.vue";
 import type { Member } from "@/interfaces";
 import { membersKey } from "./injectionKeys";
@@ -20,7 +20,7 @@ members.set(45677, {
   points: 1000,
 });
 
-provide(membersKey, reactive(members));
+provide(membersKey, ref(members));
 </script>
 
 <template>

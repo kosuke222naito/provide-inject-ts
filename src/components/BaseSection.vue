@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed, inject } from "vue";
 import OneMember from "./OneMember.vue";
-import type { Member } from "@/interfaces";
+import { membersKey } from "@/injectionKeys";
 
-const members = inject("members") as Map<number, Member>;
+const members = inject(membersKey)!;
 
 const totalPoints = computed((): number => {
   return Array.from(members.values()).reduce((sum, member) => sum + member.points, 0);

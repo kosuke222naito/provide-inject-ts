@@ -2,6 +2,7 @@
 import { reactive, provide } from "vue";
 import BaseSection from "./components/BaseSection.vue";
 import type { Member } from "@/interfaces";
+import { membersKey } from "./injectionKeys";
 
 const members = new Map<number, Member>();
 members.set(33456, {
@@ -19,7 +20,7 @@ members.set(45677, {
   points: 1000,
 });
 
-provide("members", reactive(members));
+provide(membersKey, reactive(members));
 </script>
 
 <template>

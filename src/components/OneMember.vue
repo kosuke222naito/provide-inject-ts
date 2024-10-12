@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { computed, inject } from "vue";
-
 import type { Member } from "@/interfaces";
+import { membersKey } from "@/injectionKeys";
 
 interface Props {
   id: number;
 }
 
 const { id } = defineProps<Props>();
-const memberList = inject("memberList") as Map<number, Member>;
+const members = inject(membersKey)!;
 
 const member = computed((): Member => {
-  return memberList.get(id) as Member;
+  return members.value.get(id)!;
 });
 
 const noteDisplay = computed((): string => {
